@@ -1,7 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "TOML",
-  "scopeName": "source.toml",
+  "name": "RET",
+  "scopeName": "source.ret",
   "patterns": [
     {
       "include": "#comments"
@@ -20,11 +19,11 @@
     "comments": {
       "patterns": [
         {
-          "name": "comment.line.number-sign.toml",
+          "name": "comment.line.number-sign.ret",
           "match": "\\s*(#).*$",
           "captures": {
             "1": {
-              "name": "punctuation.definition.comment.toml"
+              "name": "punctuation.definition.comment.ret"
             }
           }
         }
@@ -33,32 +32,32 @@
     "tables": {
       "patterns": [
         {
-          "name": "entity.name.section.toml",
+          "name": "entity.name.section.ret",
           "match": "^\\s*(\\[)([^\\[\\]]+)(\\])\\s*$",
           "captures": {
             "1": {
-              "name": "punctuation.definition.table.toml"
+              "name": "punctuation.definition.table.ret"
             },
             "2": {
-              "name": "entity.name.table.toml"
+              "name": "entity.name.table.ret"
             },
             "3": {
-              "name": "punctuation.definition.table.toml"
+              "name": "punctuation.definition.table.ret"
             }
           }
         },
         {
-          "name": "entity.name.section.toml",
+          "name": "entity.name.section.ret",
           "match": "^\\s*(\\[\\[)([^\\[\\]]+)(\\]\\])\\s*$",
           "captures": {
             "1": {
-              "name": "punctuation.definition.table-array.toml"
+              "name": "punctuation.definition.table-array.ret"
             },
             "2": {
-              "name": "entity.name.table.toml"
+              "name": "entity.name.table.ret"
             },
             "3": {
-              "name": "punctuation.definition.table-array.toml"
+              "name": "punctuation.definition.table-array.ret"
             }
           }
         }
@@ -70,10 +69,10 @@
           "match": "^\\s*([A-Za-z_][A-Za-z0-9_-]*)\\s*(=)",
           "captures": {
             "1": {
-              "name": "variable.other.key.toml"
+              "name": "variable.other.key.ret"
             },
             "2": {
-              "name": "punctuation.separator.key-value.toml"
+              "name": "punctuation.separator.key-value.ret"
             }
           }
         },
@@ -81,10 +80,10 @@
           "match": "^\\s*(\"[^\"]*\")\\s*(=)",
           "captures": {
             "1": {
-              "name": "variable.other.key.toml string.quoted.double.toml"
+              "name": "variable.other.key.ret string.quoted.double.ret"
             },
             "2": {
-              "name": "punctuation.separator.key-value.toml"
+              "name": "punctuation.separator.key-value.ret"
             }
           }
         }
@@ -115,34 +114,34 @@
     "strings": {
       "patterns": [
         {
-          "name": "string.quoted.double.toml",
+          "name": "string.quoted.double.ret",
           "begin": "\"",
           "end": "\"",
           "patterns": [
             {
-              "name": "constant.character.escape.toml",
+              "name": "constant.character.escape.ret",
               "match": "\\\\."
             }
           ]
         },
         {
-          "name": "string.quoted.single.toml",
+          "name": "string.quoted.single.ret",
           "begin": "'",
           "end": "'"
         },
         {
-          "name": "string.quoted.triple.toml",
+          "name": "string.quoted.triple.ret",
           "begin": "\"\"\"",
           "end": "\"\"\"",
           "patterns": [
             {
-              "name": "constant.character.escape.toml",
+              "name": "constant.character.escape.ret",
               "match": "\\\\."
             }
           ]
         },
         {
-          "name": "string.quoted.triple.toml",
+          "name": "string.quoted.triple.ret",
           "begin": "'''",
           "end": "'''"
         }
@@ -151,51 +150,51 @@
     "numbers": {
       "patterns": [
         {
-          "name": "constant.numeric.integer.toml",
+          "name": "constant.numeric.integer.ret",
           "match": "\\b[-+]?[0-9][0-9_]*\\b"
         },
         {
-          "name": "constant.numeric.float.toml",
+          "name": "constant.numeric.float.ret",
           "match": "\\b[-+]?[0-9][0-9_]*\\.[0-9_]*([eE][-+]?[0-9_]+)?\\b"
         },
         {
-          "name": "constant.numeric.hex.toml",
+          "name": "constant.numeric.hex.ret",
           "match": "\\b0x[0-9A-Fa-f][0-9A-Fa-f_]*\\b"
         },
         {
-          "name": "constant.numeric.octal.toml",
+          "name": "constant.numeric.octal.ret",
           "match": "\\b0o[0-7][0-7_]*\\b"
         },
         {
-          "name": "constant.numeric.binary.toml",
+          "name": "constant.numeric.binary.ret",
           "match": "\\b0b[01][01_]*\\b"
         },
         {
-          "name": "constant.numeric.infinity.toml",
+          "name": "constant.numeric.infinity.ret",
           "match": "\\b[-+]?inf\\b"
         },
         {
-          "name": "constant.numeric.nan.toml",
+          "name": "constant.numeric.nan.ret",
           "match": "\\bnan\\b"
         }
       ]
     },
     "booleans": {
-      "name": "constant.language.boolean.toml",
+      "name": "constant.language.boolean.ret",
       "match": "\\b(true|false)\\b"
     },
     "arrays": {
-      "name": "meta.array.toml",
+      "name": "meta.array.ret",
       "begin": "\\[",
       "end": "\\]",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.array.begin.toml"
+          "name": "punctuation.definition.array.begin.ret"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.array.end.toml"
+          "name": "punctuation.definition.array.end.ret"
         }
       },
       "patterns": [
@@ -206,23 +205,23 @@
           "include": "#comments"
         },
         {
-          "name": "punctuation.separator.array.toml",
+          "name": "punctuation.separator.array.ret",
           "match": ","
         }
       ]
     },
     "inline-tables": {
-      "name": "meta.inline-table.toml",
+      "name": "meta.inline-table.ret",
       "begin": "\\{",
       "end": "\\}",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.inline-table.begin.toml"
+          "name": "punctuation.definition.inline-table.begin.ret"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.inline-table.end.toml"
+          "name": "punctuation.definition.inline-table.end.ret"
         }
       },
       "patterns": [
@@ -233,7 +232,7 @@
           "include": "#values"
         },
         {
-          "name": "punctuation.separator.inline-table.toml",
+          "name": "punctuation.separator.inline-table.ret",
           "match": ","
         }
       ]
@@ -241,15 +240,15 @@
     "datetimes": {
       "patterns": [
         {
-          "name": "constant.other.datetime.toml",
+          "name": "constant.other.datetime.ret",
           "match": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[-+]\\d{2}:\\d{2})"
         },
         {
-          "name": "constant.other.date.toml",
+          "name": "constant.other.date.ret",
           "match": "\\d{4}-\\d{2}-\\d{2}"
         },
         {
-          "name": "constant.other.time.toml",
+          "name": "constant.other.time.ret",
           "match": "\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?"
         }
       ]
